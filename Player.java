@@ -7,11 +7,33 @@ import java.util.Scanner;
 
 public class Player
 {
-  /* your code here - attributes */
+  private String name;
+  private int points;
+  private Scanner input;
 
-  /* your code here - constructor(s) */ 
 
-  /* your code here - accessor(s) */ 
+  Player(Scanner input) {
+    name = input.nextLine();
+    this.setPoints(0);
+    this.setName(name);
+  }
 
-  /* your code here - mutator(s) */ 
+  public String getName() {
+    return this.name;
+  }
+
+  public int getPoints() {
+    return this.points;
+  }
+
+  public void setPoints(int n){
+    this.points = n;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void addPoints(int n) {
+    this.points += n;
+  }
 }

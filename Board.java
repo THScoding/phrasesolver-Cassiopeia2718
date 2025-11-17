@@ -23,9 +23,6 @@ public class Board
   public int getCurrentLetterValue() {
     return this.currentLetterValue;
   }
-  
-  /* your code here - mutator(s)  */
-
 
   /* ---------- provided code, do not modify ---------- */
   public void setLetterValue()
@@ -36,11 +33,7 @@ public class Board
 
   public boolean isSolved(String guess)
   {
-    if (phrase.equals(guess))
-    {
-      return true;
-    }
-    return false;
+    return phrase.equals(guess);
   }
 
   private String loadPhrase() //returns phrase and updates solved phrase
