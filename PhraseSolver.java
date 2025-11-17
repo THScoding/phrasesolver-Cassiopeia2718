@@ -37,6 +37,9 @@ public class PhraseSolver
     {
       System.out.println(this.board.getSolvedPhrase());
       this.board.setLetterValue();
+      System.out.println("");
+      System.out.print("Already guessed letters: ");
+      this.printGuessedLetters();
       System.out.print(this.getCurrentPlayer().getName() +  " guess: ");
       this.guess();
       this.swapCurrentPlayer();
@@ -60,8 +63,8 @@ public class PhraseSolver
     if(guess.length() == 1 && !this.guessedLetters.contains(guess)) {
       if(this.board.guessLetter(guess)) {
         this.getCurrentPlayer().addPoints(this.board.getCurrentLetterValue());
-        this.guessedLetters.add(guess);
       }
+      this.guessedLetters.add(guess);
     } else if(guess.length() > 1) {
       if(this.board.isSolved(guess)) {
         System.out.println("You found the phrase!!");
@@ -76,7 +79,7 @@ public class PhraseSolver
 
   public void printGuessedLetters() {
     for(int i = 0; i < this.guessedLetters.size(); i++) {
-      System.out.print(this.guessedLetters.get(i));
+      System.out.print(this.guessedLetters.get(i) + " ");
     }
     System.out.println("");
   }
