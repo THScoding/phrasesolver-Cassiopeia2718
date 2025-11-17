@@ -9,11 +9,12 @@ import java.io.File;
 public class Board
 {
   private String solvedPhrase;
-  private String phrase; 
+  private String phrase;
   private int currentLetterValue; //points value
 
   Board() {
-    this.loadPhrase();
+    this.solvedPhrase = "";
+    this.phrase = this.loadPhrase();
   } 
   
   public String getSolvedPhrase() {

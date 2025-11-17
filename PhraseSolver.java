@@ -4,8 +4,8 @@
  *  The PhraseSolver class the PhraseSolverGame
  */
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
   
 public class PhraseSolver
@@ -15,7 +15,7 @@ public class PhraseSolver
   private Player player2;
   private boolean currentPlayer1;
   private Scanner input;
-  public List<String> guessedLetters;
+  public ArrayList<String> guessedLetters;
   private boolean solved;
 
   PhraseSolver(Scanner input) {
@@ -27,7 +27,7 @@ public class PhraseSolver
     this.currentPlayer1 = true;
     this.input = input;
     this.solved = false;
-    this.guessedLetters = Arrays.asList(new String[]{"", " "});
+    this.guessedLetters = new ArrayList<>(Arrays.asList(new String[]{"", " "}));
   }
 
   public void play()
@@ -67,8 +67,7 @@ public class PhraseSolver
         System.out.println("You found the phrase!!");
         this.getCurrentPlayer().addPoints(5);
         this.solved = true;
-      }
-      System.out.println("Incorrect phrase");
+      } else {System.out.println("Incorrect phrase");}
     } else {
       System.out.println("Invalid guess");
       this.guess();
