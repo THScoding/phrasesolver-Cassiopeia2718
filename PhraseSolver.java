@@ -74,6 +74,13 @@ public class PhraseSolver
     }
   }
 
+  public void printGuessedLetters() {
+    for(int i = 0; i < this.guessedLetters.size(); i++) {
+      System.out.print(this.guessedLetters.get(i));
+    }
+    System.out.println("");
+  }
+
   public Player getCurrentPlayer() {
     return (this.getCurrentPlayer1()) ? this.player1 : this.player2;
   }
